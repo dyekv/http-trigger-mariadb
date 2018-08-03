@@ -5,7 +5,7 @@ ENV MYSQL_USER     user
 ENV MYSQL_PASSWORD password
 ENV MYSQL_DATABASE app
 
-RUN apt-get update && apt-get install make gcc pkg-config libcurl4-openssl-dev libmariadbclient-dev libmariadbclient18 unzip -y
+RUN apt-get update && apt-get install make gcc pkg-config libcurl4-openssl-dev libmariadbclient18 unzip -y
 
 COPY mysql-udf-http-master.zip /tmp
 RUN unzip
