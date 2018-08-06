@@ -7,3 +7,11 @@
 ```
 docker pull registry.gitlab.com/ktt/docker/http-trigger-mariadb:latest
 ```
+
+
+``` bash
+mysql -u root -e "create function http_get returns string soname 'mysql-udf-http.so';" -p${MYSQL_ROOT_PASSWORD} && \
+mysql -u root -e "create function http_post returns string soname 'mysql-udf-http.so';" -p${MYSQL_ROOT_PASSWORD} && \
+mysql -u root -e "create function http_put returns string soname 'mysql-udf-http.so';" -p${MYSQL_ROOT_PASSWORD} && \
+mysql -u root -e "create function http_delete returns string soname 'mysql-udf-http.so';" -p${MYSQL_ROOT_PASSWORD}
+```
